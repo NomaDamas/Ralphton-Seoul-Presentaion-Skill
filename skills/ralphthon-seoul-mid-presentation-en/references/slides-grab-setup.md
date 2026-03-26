@@ -2,16 +2,12 @@
 
 Use this when `slides-grab` is missing.
 
-## Standard setup
+## Standard npm setup
 ```bash
-git clone https://github.com/vkehfdl1/slides-grab.git && cd slides-grab
-npm ci && npx playwright install chromium
-npm exec -- slides-grab --help
-```
-
-## Codex skill install
-```bash
-npm exec -- slides-grab install-codex-skills --force
+npm install slides-grab
+npx playwright install chromium
+npx skills add ./node_modules/slides-grab -g -a codex --yes --copy
+npx slides-grab --help
 ```
 
 Then restart Codex so the installed slides-grab skills are loaded.

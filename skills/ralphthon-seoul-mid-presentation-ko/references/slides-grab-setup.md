@@ -2,16 +2,12 @@
 
 `slides-grab`이 없는 경우 이 절차를 안내합니다.
 
-## 기본 설치
+## 공식 npm 설치
 ```bash
-git clone https://github.com/vkehfdl1/slides-grab.git && cd slides-grab
-npm ci && npx playwright install chromium
-npm exec -- slides-grab --help
-```
-
-## Codex 스킬 설치
-```bash
-npm exec -- slides-grab install-codex-skills --force
+npm install slides-grab
+npx playwright install chromium
+npx skills add ./node_modules/slides-grab -g -a codex --yes --copy
+npx slides-grab --help
 ```
 
 그 다음 Codex를 재시작해야 slides-grab 스킬이 로드됩니다.

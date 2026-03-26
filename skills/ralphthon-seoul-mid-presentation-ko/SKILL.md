@@ -27,8 +27,10 @@ metadata:
    - `slides-grab --help`
    - 또는 `npm exec -- slides-grab --help`
 2. 없으면 `references/slides-grab-setup.md` 기준으로 설치를 안내합니다.
-3. Codex용 `slides-grab` 스킬이 없으면 아래 설치를 안내하고 Codex 재시작을 요청합니다.
-   - `npm exec -- slides-grab install-codex-skills --force`
+3. Codex용 `slides-grab` 스킬이 없으면 공식 npm 패키지 기준으로 아래 설치를 안내하고 Codex 재시작을 요청합니다.
+   - `npm install slides-grab`
+   - `npx playwright install chromium`
+   - `npx skills add ./node_modules/slides-grab -g -a codex --yes --copy`
 4. CLI 사용 가능 상태가 된 뒤 인터뷰를 이어갑니다.
 
 ## 필수 인터뷰

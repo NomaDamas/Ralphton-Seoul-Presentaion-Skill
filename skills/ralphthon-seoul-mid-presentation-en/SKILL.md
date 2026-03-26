@@ -27,8 +27,10 @@ Before interviewing, verify the environment.
    - `slides-grab --help`
    - or `npm exec -- slides-grab --help`
 2. If unavailable, guide the user through the standard setup from `references/slides-grab-setup.md`.
-3. If the Codex `slides-grab` skills are missing, tell the user to install them and restart Codex:
-   - `npm exec -- slides-grab install-codex-skills --force`
+3. If the Codex `slides-grab` skills are missing, tell the user to install them with the official npm package flow and restart Codex:
+   - `npm install slides-grab`
+   - `npx playwright install chromium`
+   - `npx skills add ./node_modules/slides-grab -g -a codex --yes --copy`
 4. Resume only after the CLI is available.
 
 ## Mandatory interview

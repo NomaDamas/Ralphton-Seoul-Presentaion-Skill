@@ -37,12 +37,12 @@ npx skills add NomaDamas/Ralphton-Seoul-Presentaion-Skill --skill ralphthon-seou
 
 ## slides-grab prerequisite
 
-If `slides-grab` is not installed yet:
+If `slides-grab` is not installed yet, use the official npm package flow:
 
 ```bash
-git clone https://github.com/vkehfdl1/slides-grab.git && cd slides-grab
-npm ci && npx playwright install chromium
-npm exec -- slides-grab install-codex-skills --force
+npm install slides-grab
+npx playwright install chromium
+npx skills add ./node_modules/slides-grab -g -a codex --yes --copy
 ```
 
 Then restart Codex.
