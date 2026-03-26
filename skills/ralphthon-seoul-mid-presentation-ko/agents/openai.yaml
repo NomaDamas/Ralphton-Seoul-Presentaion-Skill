@@ -1,0 +1,6 @@
+interface:
+  display_name: "랄프톤 서울 중간발표"
+  short_description: "한국어 랄프톤 중간발표 HTML 슬라이드 워크플로우"
+  default_prompt: "$ralphthon-seoul-mid-presentation-ko 를 사용해서 먼저 인터뷰를 진행하고, outline 작성 후 HTML 슬라이드를 만든 다음 editor까지 실행해줘."
+policy:
+  allow_implicit_invocation: true
