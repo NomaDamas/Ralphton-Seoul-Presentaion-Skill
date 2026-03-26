@@ -12,11 +12,12 @@ Use this skill when the user wants to create a Ralphthon Seoul mid-presentation 
 ## Goal
 Complete the full pre-export flow:
 1. confirm `slides-grab` setup,
-2. run a required interview,
-3. derive `slide-outline.md`,
-4. generate HTML slides,
-5. validate and build the viewer,
-6. **launch the editor after HTML slide creation**.
+2. invoke the installed `$slides-grab` skill,
+3. run a required interview,
+4. derive `slide-outline.md`,
+5. generate HTML slides,
+6. validate and build the viewer,
+7. **launch the editor after HTML slide creation**.
 
 Do **not** skip the interview. Do **not** stop at the outline. Do **not** stop at generated HTML. After the HTML slides are created, you must mention and run `slides-grab edit --slides-dir <path>`.
 
@@ -32,6 +33,7 @@ Before interviewing, verify the environment.
    - `npx playwright install chromium`
    - `npx skills add ./node_modules/slides-grab -g -a codex --yes --copy`
 4. Resume only after the CLI is available.
+5. After setup succeeds, explicitly invoke the installed `$slides-grab` skill and use its instructions as the baseline workflow for planning, HTML generation, validation, viewer build, and editor launch.
 
 ## Mandatory interview
 Ask the user questions before outlining. Use `references/interview-checklist.md` as the checklist.
@@ -64,16 +66,18 @@ If the user gives enough material, you may split problem or solution into extra 
 1. Interview the user until the minimum required inputs are grounded.
 2. Create `slide-outline.md`.
 3. Show the outline briefly and get explicit approval before designing slides.
-4. Use `decks/<deck-name>/` as the slides workspace.
-5. Generate `slide-XX.html` files.
-6. Run `slides-grab validate --slides-dir <path>`.
-7. Fix HTML/CSS until validation passes.
-8. Run `slides-grab build-viewer --slides-dir <path>`.
-9. Report where the viewer was built.
-10. **Run `slides-grab edit --slides-dir <path>` after the HTML slides are ready.** Mention clearly that the editor launch is mandatory in this workflow.
+4. **Explicitly invoke `$slides-grab` and follow its installed instructions** for the deck-building workflow.
+5. Use `decks/<deck-name>/` as the slides workspace.
+6. Generate `slide-XX.html` files under the `slides-grab` workflow.
+7. Run `slides-grab validate --slides-dir <path>`.
+8. Fix HTML/CSS until validation passes.
+9. Run `slides-grab build-viewer --slides-dir <path>`.
+10. Report where the viewer was built.
+11. **Run `slides-grab edit --slides-dir <path>` after the HTML slides are ready.** Mention clearly that the editor launch is mandatory in this workflow.
 
 ## Rules
 - Keep the workflow in English unless the user explicitly asks otherwise.
+- Do not bypass `$slides-grab`; this skill is a Ralphthon-specific wrapper on top of the installed `slides-grab` skill.
 - Follow the Ralphthon template priorities: problem attractiveness, solution effectiveness, Ralph capability.
 - Prefer concrete user pain and workflow evidence over slogans.
 - Keep slides concise and pitch-oriented.

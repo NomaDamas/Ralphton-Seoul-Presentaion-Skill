@@ -9,11 +9,12 @@ Installable agent skills for creating **Ralphthon Seoul mid-presentation** decks
 
 Both skills require the agent to:
 1. verify `slides-grab` is available,
-2. run a mandatory interview,
-3. derive `slide-outline.md`,
-4. generate HTML slides,
-5. validate and build the viewer,
-6. **launch the editor after HTML slide creation**.
+2. invoke the installed `$slides-grab` skill and follow its instructions,
+3. run a mandatory interview,
+4. derive `slide-outline.md`,
+5. generate HTML slides,
+6. validate and build the viewer,
+7. **launch the editor after HTML slide creation**.
 
 ## Install with Skills CLI
 

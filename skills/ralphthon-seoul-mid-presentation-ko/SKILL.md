@@ -12,11 +12,12 @@ metadata:
 ## 목표
 아래 흐름을 끝까지 수행합니다.
 1. `slides-grab` 설치/사용 가능 여부 확인
-2. 필수 인터뷰 진행
-3. `slide-outline.md` 도출
-4. HTML 슬라이드 생성
-5. 검증 및 viewer 빌드
-6. **HTML 슬라이드 생성 후 반드시 editor 실행**
+2. 설치된 `$slides-grab` 스킬 호출
+3. 필수 인터뷰 진행
+4. `slide-outline.md` 도출
+5. HTML 슬라이드 생성
+6. 검증 및 viewer 빌드
+7. **HTML 슬라이드 생성 후 반드시 editor 실행**
 
 인터뷰를 생략하지 마세요. outline 작성 후에는 유저에게 평가를 요청하세요. HTML만 만들고 끝내지 마세요. HTML 슬라이드를 만든 뒤에는 반드시 `slides-grab edit --slides-dir <path>` 실행을 언급하고 실제로 실행하세요.
 
@@ -32,6 +33,7 @@ metadata:
    - `npx playwright install chromium`
    - `npx skills add ./node_modules/slides-grab -g -a codex --yes --copy`
 4. CLI 사용 가능 상태가 된 뒤 인터뷰를 이어갑니다.
+5. 설치가 끝나면 **반드시 설치된 `$slides-grab` 스킬을 호출**하고, 계획/HTML 생성/검증/viewer/editor 흐름은 그 instruction을 기준으로 진행합니다.
 
 ## 필수 인터뷰
 outline 작성 전에 반드시 질문을 던지세요. 체크리스트는 `references/interview-checklist.md`를 따릅니다.
@@ -65,16 +67,18 @@ outline 작성 전에 반드시 질문을 던지세요. 체크리스트는 `refe
 1. 필수 정보가 채워질 때까지 인터뷰합니다.
 2. `slide-outline.md`를 작성합니다.
 3. outline을 짧게 보여주고, 슬라이드 제작 전 사용자 승인을 받습니다.
-4. 슬라이드 작업 경로는 `decks/<deck-name>/`를 사용합니다.
-5. `slide-XX.html` 파일을 생성합니다.
-6. `slides-grab validate --slides-dir <path>`를 실행합니다.
-7. 검증이 통과할 때까지 HTML/CSS를 수정합니다.
-8. `slides-grab build-viewer --slides-dir <path>`를 실행합니다.
-9. viewer 위치를 사용자에게 알려줍니다.
-10. **HTML 슬라이드가 준비되면 반드시 `slides-grab edit --slides-dir <path>`를 실행합니다.** 이 워크플로우에서는 editor 실행이 필수라고 명시하세요.
+4. **반드시 `$slides-grab`를 호출하고 그 설치된 instruction을 기준으로** 슬라이드 제작을 진행합니다.
+5. 슬라이드 작업 경로는 `decks/<deck-name>/`를 사용합니다.
+6. `slides-grab` 워크플로우 안에서 `slide-XX.html` 파일을 생성합니다.
+7. `slides-grab validate --slides-dir <path>`를 실행합니다.
+8. 검증이 통과할 때까지 HTML/CSS를 수정합니다.
+9. `slides-grab build-viewer --slides-dir <path>`를 실행합니다.
+10. viewer 위치를 사용자에게 알려줍니다.
+11. **HTML 슬라이드가 준비되면 반드시 `slides-grab edit --slides-dir <path>`를 실행합니다.** 이 워크플로우에서는 editor 실행이 필수라고 명시하세요.
 
 ## 규칙
 - 기본 진행 언어는 한국어입니다.
+- `$slides-grab`를 우회하지 마세요. 이 스킬은 설치된 `slides-grab` 스킬 위에 랄프톤 중간발표 제약을 덧씌우는 래퍼입니다.
 - 랄프톤 양식의 핵심 평가 포인트를 우선합니다: 문제의 매력도, 솔루션의 효과성, 랄프 역량.
 - 추상적인 수식보다 구체적인 사용자 고통과 실제 워크플로우를 우선합니다.
 - 슬라이드는 짧고 피치 중심으로 만듭니다.
